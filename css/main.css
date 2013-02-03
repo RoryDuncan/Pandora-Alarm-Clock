@@ -1,16 +1,18 @@
-/* ==========================================================================
-   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
-   ========================================================================== */
+
+
+/* h5bp.com template used */
 
 html,
 button,
 input,
 select,
 textarea {
-    color: #222;
+    color: #ccc;
 }
 
 body {
+
+
     font-size: 1em;
     line-height: 1.4;
     background-color:#ccc;
@@ -62,73 +64,131 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    padding-top:10%;
+    font: 16px/26px  Helvetica, Helvetica Neue, Arial;
+    font-weight:light;
 }
 
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+    width: 100%;
+    height:100%;
+    margin: 0% 0%;
 }
 
 .header-container,
 .footer-container,
-.main aside {
+.main {
 }
 
 .title {
-    color: white;
+    color: #eee;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size:2.5em;
+    font-weight:200;
+    background: #050505; 
+    padding:15px 10px;
+    width:57%;
+    height:100%;
+    margin: 0px;
+}
+h3 {margin: 0 0;}
+
+
+#clock {
+    font-weight:100;
+    color:#fff;
+    font-size: 1em;
+  }
+
+.alarm .alarm_time {
     font-family: 'Josefin Sans', sans-serif;
     font-weight:200;
-    background: #050505;
-    padding:20px 20px;
-    width:100%;
+    font-size:2em;
+    height:50px;
+    width:97%;
+    border: none;
+    background-color:#0c0c0c;
+    color: #fff;
+    padding-left:3%;
 }
 
-/* ==============
-    MOBILE: Menu
-   ============== */
-
-nav ul {
-    margin: 0;
-    padding: 0;
+    .alarm_time:hover {
+    background-color:#257;
+    color: #000;
+    }
+    .alarm .buttonCover {
+        height:60px;
+        width:20px;
+        background-color:#080808;
+        position:relative;
+        left:98%;
+        top:-105px;
+        
+    }
+ .alarm .alarm_button {width:200px; height:100px;}
+ .alarm .alarm_button, .alarm .alarm_url {
+    margin:none;
+    margin:4px 0px;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight:200;
+    font-size:1.4em;
+    height:80px;
+    padding-bottom:5px;
+    background-color:#111;
+    border:none;
+ }
+ .alarm .alarm_button:hover {
+    background-color:#257;
+    color:#fff;
+ }
+ .alarm .alarm_url:hover {
+    cursor: pointer;
+    background-color:#ccc;
+ }
+ .alarm .alarm_url {
+    display:none;
+    padding-left:10px;
+    height:75px;
+    color:#832;
+ }
+ ::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #832;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #832;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #832;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #832;
 }
 
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: #111;
-}
-
-nav a:hover,
-nav a:visited {
-    color: white;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
 
 /* ==============
     MOBILE: Main
    ============== */
 
-.main {
-    padding: 30px 0;
-    background: #050505;
+body {
+    padding-top:0%;
 }
 
-.footer-container footer {
-    font-size: .9em;
-    color: #ccc;
+.main, .title {
+    width:100%;
     padding: 20px 0px;
+    background: #050505;
+}
+h1.title {
+    padding-left:10px;
+    font-size:1.2em;}
+
+.footer-container footer {
+    font-size: .7em;
+    color: #ccc;
+    padding: 0px 0px;
     background-color: #050505;
+    text-align: right;
 }
 
 /* ===============
@@ -143,9 +203,20 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+.main, .clearfix, .wrapper {
+    margin-bottom:0px;
+}
 
+footer h5 {
+    font-family:Helvetica, Helvetica Neue, Arial;
+    margin:0px;
+    padding: 0px 10px;
+}
 
-
+.main p {
+    background-color: #050505;
+    padding: 10px 15px;
+}
 
 
 
@@ -161,38 +232,12 @@ nav a:hover {
    ========================================================================== */
 
 @media only screen and (min-width: 480px) {
-
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-
-    nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
-        margin: 0 0.7%;
-    }
+    body {
+    padding-top:5%;
+}
+h1.title {
+    padding-left:10px;
+    font-size:1.6em;}
 }
 
 @media only screen and (min-width: 768px) {
@@ -201,14 +246,16 @@ nav a:hover {
     WIDE: CSS3 Effects
    ==================== */
 
-    .header-container,
-    .main aside {
-        /*
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
-        */
+    .title {
+        padding-left:10%;
+        -webkit-box-shadow: 0 -8px 12px #aaa;
+           -moz-box-shadow: 0 -8px 12px #aaa;
+                box-shadow: 0 -8px 12px #aaa;
+        
     }
+    h1.title {
+    padding-left:10px;
+    font-size:2em;}
 
 /* ============
     WIDE: Menu
@@ -216,26 +263,24 @@ nav a:hover {
 
     .title {
         float: left;
+        margin-bottom:0px;
+        width:57%;
     }
+    body {
+    padding-top:10%;
+}
 
-    nav {
-        float: right;
-        width: 38%;
-    }
 
 /* ============
     WIDE: Main
    ============ */
 
-    .main article {
-        float: left;
-        width: 57%;
+    .main {
+        clear:both;
+        width: 100%;
+        margin: 0px auto;
     }
 
-    .main aside {
-        float: right;
-        width: 28%;
-    }
 }
 
 @media only screen and (min-width: 1140px) {
@@ -245,8 +290,8 @@ nav a:hover {
    =============== */
 
     .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
+        width: 1024px; /* 1140px - 10% for margins */
+        margin: 0px auto;
     }
 }
 
@@ -349,7 +394,7 @@ nav a:hover {
 
     pre,
     blockquote {
-        border: 1px solid #999;
+        border-left: 1px solid #999;
         page-break-inside: avoid;
     }
 
