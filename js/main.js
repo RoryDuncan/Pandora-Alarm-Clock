@@ -95,18 +95,18 @@ $('input[name=setAlarmTime]').click( function() {
  } );
 
 $('input[name=urlTarget]').click( function() {
-    if ($('input[name=urlTargetInput]').css("display")  === "none") {
-      $('input[name=urlTargetInput]').css("display", "inline");
+    if ($('input[name=urlTargetInput]').css("width")  === "0px") {
+      $('input[name=urlTargetInput]').css("width", "210px");
      }
-    else if ($('input[name=urlTargetInput]').css("display")  === "inline" || $('input[name=urlTargetInput]').css("display")  === "inline-block") {
-      $('input[name=urlTargetInput]').css("display", "none");
+    else if ($('input[name=urlTargetInput]').css("width")  === "210px") {
+      $('input[name=urlTargetInput]').css("width", "0px");
      }
 
 });// $("input[name=urlTarget]").val("Change url?")
 //        visual effect so that the buttons are understandable
   $('input[name=urlTarget]').mouseover( function() {
 
-    if ($('input[name=urlTargetInput]').css("display")  === "none") {
+    if ($('input[name=urlTargetInput]').css("width")  === "0px") {
       $("input[name=urlTarget]").val("Change url?")
     }
     else if ( $('input[name=urlTargetInput]').css("display")  === "inline" || $('input[name=urlTargetInput]').css("display") ) {
@@ -114,13 +114,13 @@ $('input[name=urlTarget]').click( function() {
     }
   } );
   $('input[name=urlTarget]').mouseout( function(){
-    if ($('input[name=urlTargetInput]').css("display")  === "none") {
+    if ($('input[name=urlTargetInput]').css("width")  === "0px") {
       // remove the "www."
       var n = Data.url;
       n = n.slice(4, n.length);
       $("input[name=urlTarget]").val("url: "+ n)
     }
-    else if ( $('input[name=urlTargetInput]').css("display")  === "inline" || $('input[name=urlTargetInput]').css("display") ) {
+    else if ( $('input[name=urlTargetInput]').css("width")  === "210px" ) {
       $("input[name=urlTarget]").val("Save");
     } 
   } ); 

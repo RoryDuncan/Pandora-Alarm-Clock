@@ -59,8 +59,8 @@ textarea {
 }
 
 
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+/* ==========================================================================
+   Rory Duncan's custom styles
    ========================================================================== */
 
 body {
@@ -93,6 +93,13 @@ body {
 }
 h3 {margin: 0 0;}
 
+h5 a {color:#aaa; text-decoration:none; padding: 2px 5px;}
+h5 a:visited {color:#aaa;}
+h5 a:hover {color:#f35; background-color:#111; border-radius: 5px;}
+h5 a:after { 
+content:"/";
+}
+
 
 #clock {
     font-weight:100;
@@ -110,13 +117,13 @@ h3 {margin: 0 0;}
     background-color:#0c0c0c;
     color: #fff;
     padding-left:3%;
-}
+ }
 
-    .alarm_time:hover {
+ .alarm_time:hover {
     background-color:#257;
     color: #000;
     }
-    .alarm .buttonCover {
+ .alarm .buttonCover {
         height:60px;
         width:20px;
         background-color:#080808;
@@ -135,9 +142,11 @@ h3 {margin: 0 0;}
     font-size:1.4em;
     height:80px;
     padding-bottom:5px;
-    background-color:#111;
+
     border:none;
  }
+ .alarm .alarm_button {    background-color:#111;}
+ .alarm .alarm_url {    background-color:#c35;}
  .alarm .alarm_button:hover {
     background-color:#257;
     color:#fff;
@@ -147,10 +156,12 @@ h3 {margin: 0 0;}
     background-color:#ccc;
  }
  .alarm .alarm_url {
-    display:none;
-    padding-left:10px;
+    white-space: no-wrap;
+    overflow:hidden;
+    width: 0px;
+    text-align:center;
     height:75px;
-    color:#832;
+    color:#257;
  }
  ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #832;
@@ -164,6 +175,24 @@ h3 {margin: 0 0;}
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #832;
 }
+/* ==============
+    Transitions
+   ============== */
+
+*:hover {
+  -webkit-transition: color .25s linear, background-color .25s linear;
+     -moz-transition: color .25s linear, background-color .25s linear;
+      -ms-transition: color .25s linear, background-color .25s linear;
+       -o-transition: color .25s linear, background-color .25s linear;
+          transition: color .25s linear, background-color .25s linear;
+
+}
+ .alarm_url {
+    -webkit-transition: width .15s linear;
+     -moz-transition: width .15s linear;
+      -ms-transition: width .15s linear;
+       -o-transition: width .15s linear;
+          transition: width .15s linear}
 
 
 /* ==============
@@ -198,10 +227,6 @@ h1.title {
 .ie7 .title {
     padding-top: 20px;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 
 .main, .clearfix, .wrapper {
     margin-bottom:0px;
