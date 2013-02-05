@@ -93,12 +93,14 @@ body {
 }
 h3 {margin: 0 0;}
 
-h5 a {color:#aaa; text-decoration:none; padding: 2px 5px;}
-h5 a:visited {color:#aaa;}
-h5 a:hover {color:#f35; background-color:#111; border-radius: 5px;}
-h5 a:after { 
-content:"/";
-}
+h5 a {
+    color:#aaa;
+    text-decoration:none;
+    padding: 2px 5px;
+    }
+h5 a:visited { color:#aaa;}
+h5 a:hover { color:#4ac;}
+h5 a:after { content:"/";}
 
 
 #clock {
@@ -123,6 +125,8 @@ content:"/";
     background-color:#257;
     color: #000;
     }
+
+
  .alarm .buttonCover {
         height:60px;
         width:20px;
@@ -132,7 +136,13 @@ content:"/";
         top:-140px;
         
     }
- .alarm .alarm_button {width:200px; height:100px;}
+
+
+ .alarm .alarm_button {
+    width:200px;
+    height:100px;
+}
+
  .alarm .alarm_button, .alarm .alarm_url {
     margin:none;
     margin:4px 0px;
@@ -142,19 +152,21 @@ content:"/";
     font-size:1.4em;
     height:80px;
     padding-bottom:5px;
-
     border:none;
  }
+
  .alarm .alarm_button {    background-color:#111;}
- .alarm .alarm_url {    background-color:#c35;}
+ .alarm .alarm_url {    background-color:#4ac;}
  .alarm .alarm_button:hover {
     background-color:#257;
     color:#fff;
  }
+
  .alarm .alarm_url:hover {
-    cursor: pointer;
+    cursor: text;
     background-color:#ccc;
  }
+
  .alarm .alarm_url {
     white-space: no-wrap;
     overflow:hidden;
@@ -163,17 +175,27 @@ content:"/";
     height:75px;
     color:#257;
  }
+
+/*
+
+These change the placeholder styles within the input form
+
+*/
+
  ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #832;
+    color:    #fff;
 }
+
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #832;
+    color:    #fff;
 }
+
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #832;
+    color:    #fff;
 }
+
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #832;
+    color:    #fff;
 }
 /* ==============
     Transitions
@@ -188,11 +210,11 @@ content:"/";
 
 }
  .alarm_url {
-    -webkit-transition: width .15s linear;
-     -moz-transition: width .15s linear;
-      -ms-transition: width .15s linear;
-       -o-transition: width .15s linear;
-          transition: width .15s linear}
+    -webkit-transition: width .20s linear;
+     -moz-transition: width .20s linear;
+      -ms-transition: width .20s linear;
+       -o-transition: width .20s linear;
+          transition: width .20s linear}
 
 
 /* ==============
