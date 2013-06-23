@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html class="no-js">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Browser Alarm | Rory Duncan 2013</title>
-        <meta name="description" content="">
+        <title>Pandora Alarm Clock</title>
+        <meta name="description" content="Wake up to Pandora Radio.">
         <meta name="viewport" content="width=device-width">
 
-        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 
@@ -16,45 +18,68 @@
         <![endif]-->
     </head>
     <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">Browser Alarm</h1>
-
+                <h1 class="title">Pandora Alarm Clock</h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#" id="about" >About <div class="ab arrow-up"></div></a>
+                        </li>
+                        <li>
+                            <a href="#" id="set" >Set Alarm <div class="al arrow-up"></div></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/RoryDuncan/Pandora-Alarm-Clock" target="_blank" >Github</a>
+                        </li>
+                    </ul>
+                </nav>
             </header>
         </div>
 
         <div class="main-container">
-            <div class="main wrapper clearfix">
-                <p>
-                    </p>
-                    <form class="alarm">
+            <div class="about" >
+                <p>Wake up to <a href="http://www.pandora.com" class="pandora" >Pandora<sup>&copy;</sup> Radio</a>.</p>
+                <p>Designed by Rory Duncan. </p>
+                <p>Click Set Alarm to Change the time the alarm will go off.</p>
+            </div>
 
-                    <input class="alarm_time" name="alarmTime" type="time" />
-                    <input class="alarm_button" name="setAlarmTime" type="button" value="alarm:Not Set" />
-                    <input class="alarm_button" name="urlTarget" type="button" value="url: pandora.com" />
-                    <input class="alarm_url" name="urlTargetInput" type="text" placeholder="www.pandora.com" />
-                    <div class="buttonCover"></div>
-
-                </form>
+            <div class="alarm" >
                 
+                <p>
+                    Set the time that you'd like pandora to start.
+                </p>
+                <input type="time" id="time" />
+                <br />
+                <input type="button" value="Save / Set" />
+                <p> Don't forget to check your volume! </p>
+            </div>
+            <div class="main wrapper clearfix">
+                <div class="clock"> 2:00 pm</div>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
-        <div class="footer-container">
 
+        <div class="footer-container">
             <footer class="wrapper">
-                <h5>
-                    <a href="" >reset</a>
-                    <a href="">about</a>
-                    <a href="https://github.com/RoryDuncan" target="_blank">Rory Duncan 2013</a>
-                    
-                    <span id="clock">Loading...</span> </h5>
+                Rory Duncan
             </footer>
         </div>
 
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         <script src="js/main.js"></script>
+        <script src="js/alarm.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>

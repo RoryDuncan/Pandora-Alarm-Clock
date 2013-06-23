@@ -1,30 +1,30 @@
-
-
-/* h5bp.com template used */
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
 
 html,
 button,
 input,
 select,
 textarea {
-    color: #ccc;
+    color: #222;
 }
 
 body {
-
-
+    color: #666;
     font-size: 1em;
     line-height: 1.4;
-    background-color:#ccc;
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #ddd;
+    color: #444;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #ddd;
+    color: #444;
     text-shadow: none;
 }
 
@@ -59,165 +59,124 @@ textarea {
 }
 
 
-/* ==========================================================================
-   Rory Duncan's custom styles
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 
 body {
-    padding-top:10%;
-    font: 16px/26px  Helvetica, Helvetica Neue, Arial;
-    font-weight:light;
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
-    width: 100%;
-    height:100%;
-    margin: 0% 0%;
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL
+   =================== */
+
+
+.arrow-up {
+    position: relative;
+    left:40%;
+    top:6px; 
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    
+    border-bottom: 10px solid #f5f5f5;
+}
+
+.header-container {
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #fff;
 }
 
 .header-container,
 .footer-container,
-.main {
+.main aside {
+    background: #fff;
 }
 
 .title {
-    color: #eee;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size:2.5em;
-    font-weight:200;
-    background: #050505; 
-    padding:15px 10px;
-    width:57%;
-    height:100%;
-    margin: 0px;
-}
-h3 {margin: 0 0;}
-
-h5 a {color:#aaa; text-decoration:none; padding: 2px 5px;}
-h5 a:visited {color:#aaa;}
-h5 a:hover {color:#4ac;}
-h5 a:after { 
-content:"/";
+    font-weight: 200;
+    font-size:2.3em;
+    color: #088;
 }
 
-
-#clock {
-    font-weight:100;
-    color:#fff;
-    font-size: 1em;
-  }
-
-.alarm .alarm_time {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight:200;
-    font-size:2em;
-    height:50px;
-    width:97%;
-    border: none;
-    background-color:#0c0c0c;
-    color: #fff;
-    padding-left:3%;
- }
-
- .alarm_time:hover {
-    background-color:#257;
-    color: #000;
-    }
- .alarm .buttonCover {
-        height:60px;
-        width:20px;
-        background-color:#080808;
-        position:relative;
-        left:98%;
-        top:-140px;
-        
-    }
- .alarm .alarm_button {width:200px; height:100px;}
- .alarm .alarm_button, .alarm .alarm_url {
-    margin:none;
-    margin:4px 0px;
-    border: none;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight:200;
-    font-size:1.4em;
-    height:80px;
-    padding-bottom:5px;
-
-    border:none;
- }
- .alarm .alarm_button {    background-color:#111;}
- .alarm .alarm_url {    background-color:#4ac;}
- .alarm .alarm_button:hover {
-    background-color:#257;
-    color:#fff;
- }
- .alarm .alarm_url:hover {
-    cursor: text;
-    background-color:#ccc;
- }
- .alarm .alarm_url {
-    white-space: no-wrap;
-    overflow:hidden;
-    width: 0px;
-    text-align:center;
-    height:75px;
-    color:#257;
- }
- ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #fff;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #fff;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #fff;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #fff;
-}
 /* ==============
-    Transitions
+    MOBILE: Menu
    ============== */
 
-*:hover {
-  -webkit-transition: color .25s linear, background-color .25s linear;
-     -moz-transition: color .25s linear, background-color .25s linear;
-      -ms-transition: color .25s linear, background-color .25s linear;
-       -o-transition: color .25s linear, background-color .25s linear;
-          transition: color .25s linear, background-color .25s linear;
-
+nav ul {
+    margin: 0;
+    padding: 0;
 }
- .alarm_url {
-    -webkit-transition: width .15s linear;
-     -moz-transition: width .15s linear;
-      -ms-transition: width .15s linear;
-       -o-transition: width .15s linear;
-          transition: width .15s linear}
 
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0 ;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: 200;
+
+    color: #ccc;
+    background: #fff;
+}
+
+nav a:hover,
+nav a:visited {
+    color: #aaa;
+}
+
+nav a:hover {
+    text-decoration: none;
+}
 
 /* ==============
     MOBILE: Main
    ============== */
 
-body {
-    padding-top:0%;
+.pandora {
+    color:#455774;
+    text-decoration: none;
+}
+.clock {
+    padding: 35px 10px;
+    color: #888;
+    font-size: 5.5em;
+    font-weight: 100;
+}
+.alarm, .about {
+    border: 1px solid #eee;
+    padding: 5px 25px;
+    display: none;
+    border-radius: 3px;
+    margin: 0 5%;
+    width:400px;
+    color: #555;
+    background-color:#f5f5f5;
+}
+.alarm p, .about p {
+    text-align:center;
 }
 
-.main, .title {
-    width:100%;
-    padding: 20px 0px;
-    background: #050505;
+.main {
+    padding: 30px 0;
 }
-h1.title {
-    padding-left:10px;
-    font-size:1.2em;}
 
 .footer-container footer {
-    font-size: .7em;
-    color: #ccc;
-    padding: 0px 0px;
-    background-color: #050505;
-    text-align: right;
+    font-weight: 200;
+    color: #ddd;
+    padding: 20px 0;
 }
 
 /* ===============
@@ -228,20 +187,14 @@ h1.title {
     padding-top: 20px;
 }
 
-.main, .clearfix, .wrapper {
-    margin-bottom:0px;
-}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
 
-footer h5 {
-    font-family:Helvetica, Helvetica Neue, Arial;
-    margin:0px;
-    padding: 0px 10px;
-}
 
-.main p {
-    background-color: #050505;
-    padding: 10px 15px;
-}
+
+
+
 
 
 
@@ -257,12 +210,39 @@ footer h5 {
    ========================================================================== */
 
 @media only screen and (min-width: 480px) {
-    body {
-    padding-top:5%;
-}
-h1.title {
-    padding-left:10px;
-    font-size:1.6em;}
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+    nav a {
+        
+        float: left;
+        width: 27%;
+        
+        padding: 5px 2%;
+        margin-bottom: 0;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -271,40 +251,21 @@ h1.title {
     WIDE: CSS3 Effects
    ==================== */
 
-    .title {
-        padding-left:10%;
-        -webkit-box-shadow: 0 -8px 12px #aaa;
-           -moz-box-shadow: 0 -8px 12px #aaa;
-                box-shadow: 0 -8px 12px #aaa;
-        
-    }
-    h1.title {
-    padding-left:10px;
-    font-size:2em;}
-
 /* ============
     WIDE: Menu
    ============ */
 
     .title {
-        float: left;
-        margin-bottom:0px;
-        width:57%;
+        
     }
-    body {
-    padding-top:10%;
-}
 
+    nav {
+        width: 38%;
+    }
 
 /* ============
     WIDE: Main
    ============ */
-
-    .main {
-        clear:both;
-        width: 100%;
-        margin: 0px auto;
-    }
 
 }
 
@@ -315,8 +276,8 @@ h1.title {
    =============== */
 
     .wrapper {
-        width: 1024px; /* 1140px - 10% for margins */
-        margin: 0px auto;
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
     }
 }
 
@@ -419,7 +380,7 @@ h1.title {
 
     pre,
     blockquote {
-        border-left: 1px solid #999;
+        border: 1px solid #999;
         page-break-inside: avoid;
     }
 
