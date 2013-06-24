@@ -1,4 +1,4 @@
-Data = {};
+var Data = {};
 Data.url = "www.pandora.com";
 Data.setAlarm = function() {
 
@@ -39,9 +39,9 @@ Data.checkTimes = function() {
 
   if (Data.currentTime === Data.alarm) {
 
-    $('div.clock')[0].innerHTML = "BEEP BEEP BEEP"
+    $('div.clock')[0].innerHTML = "BEEP BEEP BEEP";
     console.log("Redirecting...");
-    window.location.assign("http://"+Data.url)
+    window.location.assign("http://"+Data.url);
   }
 
 };
@@ -67,7 +67,7 @@ Clock.updateClock = function() {
     currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
 
     //add useful data to be accessable later
-    tempHours = ( currentHours < 10 ? "0" : "" ) + currentHours;
+    var tempHours = ( currentHours < 10 ? "0" : "" ) + currentHours;
     Data.currentTime = tempHours + ":" + currentMinutes;
 
     // Choose either "AM" or "PM" as appropriate
@@ -77,7 +77,7 @@ Clock.updateClock = function() {
     currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
 
     // Convert an hours component of "0" to "12"
-    currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+    currentHours = ( currentHours === 0 ) ? 12 : currentHours;
 
     // Compose the string for display
     var currentTimeString = currentHours + ":" + currentMinutes + "" + timeOfDay;
