@@ -9,9 +9,12 @@
         <title>Pandora Alarm Clock</title>
         <meta name="description" content="Wake up to Pandora Radio.">
         <meta name="viewport" content="width=device-width">
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
 
         <!--[if lt IE 9]>
             <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
@@ -33,8 +36,9 @@
                         <li>
                             <a href="#" id="set" >Set Alarm <div class="al arrow-up"></div></a>
                         </li>
+
                         <li>
-                            <a href="https://github.com/RoryDuncan/Pandora-Alarm-Clock" target="_blank" >Github</a>
+                            <a href="https://github.com/RoryDuncan/Pandora-Alarm-Clock" target="_blank" > Github</a>
                         </li>
                     </ul>
                 </nav>
@@ -44,8 +48,7 @@
         <div class="main-container">
             <div class="about" >
                 <p>Wake up to <a href="http://www.pandora.com" class="pandora" >Pandora<sup>&copy;</sup> Radio</a>.</p>
-                <p>Designed by Rory Duncan. </p>
-                <p>Click Set Alarm to Change the time the alarm will go off.</p>
+                <p>Click Set Alarm to Change the time the alarm will go off. Any problems you can email to robust.rory at gmail.com.</p>
             </div>
 
             <div class="alarm" >
@@ -53,27 +56,36 @@
                 <p>
                     Set the time that you'd like pandora to start.
                 </p>
-                <input type="time" id="time" />
-                <br />
-                <input type="button" value="Save / Set" />
-                <p> Don't forget to check your volume! </p>
+                <div class="settings">
+                    <label>Time </label><br />
+                    <input type="time" id="time" required="required"/><br /><br />
+                    Going to sleep?<br /><a href="http://www.sleepti.me" > Best times to wake up. </a>
+                    <br /><br />
+                    <label>URL </label><br />
+                    <input type="text" id="url" placeholder="www.pandora.com" >
+                    <br />
+                    <input class="button" type="button" value="Save" />
+                </div>
+                <p> Don't forget to check your volume! <a href="http://www.pandora.com" target="_blank"> Test Volume </a></p>
+
             </div>
             <div class="main wrapper clearfix">
-                <div class="clock"> 2:00 pm</div>
+                <div class="clock" id="clock"> </div>
+                <div class="saved" >&nbsp;</div>
+
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
         <div class="footer-container">
-            <footer class="wrapper">
-                Rory Duncan
-            </footer>
+
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script> -->
 
-        <script src="js/main.js"></script>
         <script src="js/alarm.js"></script>
+        <script src="js/main.js"></script>
+
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

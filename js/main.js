@@ -19,11 +19,25 @@ var about_Item = function() {
 	$('div.ab').fadeIn();
 
 }
+$('.clock').hide();
+
+
 $(document).ready( (function() {
 	hideArrows();
+	// start clock, check every 2 seconds
+	window.setInterval(Clock.updateClock, 2000);
+	
+	
+	// Events
 	$('nav ul li a#about').click(about_Item);
 	$('nav ul li a#set').click(set_Alarm_Item);
 	$('.main').click(hideArrows);
+
+	$('.button').click((function(){
+		Data.getURL();
+		Data.setAlarm();
+	}))
+
 }));
 
 

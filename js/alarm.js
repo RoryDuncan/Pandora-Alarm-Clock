@@ -1,29 +1,45 @@
-
-Data.getClockInput = function() {
+Data = {};
+Data.url = "www.pandora.com";
+Data.setAlarm = function() {
 
   //retrieve value from the input form
-    var inputValue = $('input[name=alarmTime]').val();
+    var inputValue = $('input#time').val();
 
   //set in the Data object
-    Data.alarmTime = inputValue;
+    Data.alarm = inputValue;
+    Data.alarmSet = true;
+    console.log("Alarm set for", inputValue);
+    if (inputValue.length === 0) {
+      $('.saved')[0].innerHTML = "Don't forget to set a time.";
+    }
+    else {
+      $('.saved')[0].innerHTML = "Alarm set for " + inputValue + ".";
+      $('.saved').fadeIn();
+      hideArrows();
+    }
+
 
 };
 
 Data.getURL = function() {
 
-  var inputValue = $('input[name=urlTargetInput]').val();
-
+  var inputValue = $('input#url').val();
+  
   //set in the Data object
-    Data.url = inputValue;
-
+  if (inputValue.length <= 7) {
+    Data.url = "www.pandora.com";
+  }
+  else Data.url = inputValue;
+  console.log("url:", Data.url);
 };
 
 Data.checkTimes = function() {
 
   // Data.currentTime is kept updated via Clock.updateClock
 
-  if (Data.currentTime === Data.alarmTime) {
+  if (Data.currentTime === Data.alarm) {
 
+    $('div.clock')[0].innerHTML = "BEEP BEEP BEEP"
     console.log("Redirecting...");
     window.location.assign("http://"+Data.url)
   }
@@ -55,7 +71,7 @@ Clock.updateClock = function() {
     Data.currentTime = tempHours + ":" + currentMinutes;
 
     // Choose either "AM" or "PM" as appropriate
-    var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+    var timeOfDay = ( currentHours < 12 ) ? "am" : "pm";
 
     // Convert the hours component to 12-hour format if needed
     currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
@@ -64,83 +80,13 @@ Clock.updateClock = function() {
     currentHours = ( currentHours == 0 ) ? 12 : currentHours;
 
     // Compose the string for display
-    var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+    var currentTimeString = currentHours + ":" + currentMinutes + "" + timeOfDay;
 
     // Update the time display
-    document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+    $('div.clock')[0].innerHTML = currentTimeString;
+    $('.clock').fadeIn("slow");
 
   };
 
-/*  ====================
-        Events
-    ====================*/
 
 
-
-$('input[name=alarmTime]').change(Data.getClockInput);  //event for updating the alarm
-
-$('input[name=urlTargetInput]').change(Data.getURL);    //event for updating the URL target
-
-
-
-$('input[name=setAlarmTime]').click( function() {
-  //    This is the effect for when you click on the button to set the alarm 
-    if (Data.alarmSet === false) {
-      Data.alarmSet = true;
-      $("input[name=setAlarmTime]").val("alarm: Set");
-    }
-    else if (Data.alarmSet === true) {
-      Data.alarmSet = false;
-      $("input[name=setAlarmTime]").val("alarm:Not Set");
-    }
-
- } );
-
-
-
-$('input[name=urlTarget]').click( function() {
-
-  //    This is the effect for when you click on the button to change the url
-    if ($('input[name=urlTargetInput]').css("width")  === "0px") {
-      $('input[name=urlTargetInput]').css("width", "210px");
-     }
-    else if ($('input[name=urlTargetInput]').css("width")  === "210px") {
-      $('input[name=urlTargetInput]').css("width", "0px");
-     }
-
-});
-
-
-//        visual effect so that the buttons are understandable
-  $('input[name=urlTarget]').mouseover( function() {
-
-    if ($('input[name=urlTargetInput]').css("width")  === "0px") {
-      $("input[name=urlTarget]").val("Change url?")
-    }
-    else if ( $('input[name=urlTargetInput]').css("width")  === "210px" ) {
-      $("input[name=urlTarget]").val("Save");
-    }
-    
-  } );
-
-
-
-  $('input[name=urlTarget]').mouseout( function(){ 
-  //        visual effect so that the buttons are understandable #2
-
-    if ($('input[name=urlTargetInput]').css("width")  === "0px") {
-      // remove the "www."
-      var n = Data.url;
-      n = n.slice(4, n.length);
-
-      $("input[name=urlTarget]").val("url: "+ n)
-    }
-    else if ( $('input[name=urlTargetInput]').css("width")  === "210px" ) {
-
-      $("input[name=urlTarget]").val("Save");
-    }
-
-  } ); 
-
-window.setInterval(Clock.updateClock, 500);
-document.addEventListener('DOMContentLoaded', Clock.setClockForm, false);

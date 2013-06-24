@@ -11,6 +11,11 @@ textarea {
 }
 
 body {
+    -webkit-font-smoothing:antialiased;
+    -moz-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-smooth:always;
     color: #666;
     font-size: 1em;
     line-height: 1.4;
@@ -65,30 +70,19 @@ textarea {
    ========================================================================== */
 
 body {
+    overflow-x:hidden;
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
     width: 90%;
-    margin: 0 5%;
+    margin: 0 10%;
 }
 
 /* ===================
     ALL
    =================== */
 
-
-.arrow-up {
-    position: relative;
-    left:40%;
-    top:6px; 
-    width: 0; 
-    height: 0; 
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    
-    border-bottom: 10px solid #f5f5f5;
-}
 
 .header-container {
 }
@@ -105,9 +99,25 @@ body {
 }
 
 .title {
-    font-weight: 200;
-    font-size:2.3em;
-    color: #088;
+    padding-left:2%;
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font-weight: 100;
+    font-size:2em;
+    color: #08a;
+}
+#time {
+    border: 1px solid #333;
+    background-color: #000;
+    color: #eee;
+}
+.saved {
+    width:100%;
+    background-color:#484848;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    color:#eee;
+    text-align: center;
 }
 
 /* ==============
@@ -138,39 +148,64 @@ nav a:visited {
 }
 
 nav a:hover {
+    color:#044;
     text-decoration: none;
 }
-
+.alarm a:link, .alarm a:visited {
+    color: #222;
+}
 /* ==============
     MOBILE: Main
    ============== */
 
 .pandora {
+    font-weight:800;
     color:#455774;
     text-decoration: none;
 }
 .clock {
-    padding: 35px 10px;
-    color: #888;
-    font-size: 5.5em;
+    font-family: 'Oswald', sans-serif;
+    color: #484848;
+    font-size: 4em;
     font-weight: 100;
 }
+
+.settings {
+    padding-left:20%;
+    width:70%;
+    margin: 0 auto;
+}
+.settings .button {
+    margin:10px 2px;
+    border:1px solid #044;
+    webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-family:arial, helvetica, sans-serif;
+    padding: 10px 10px 10px 10px; 
+    text-decoration:none; 
+
+    font-weight:bold;
+    color: #dff;
+    background-color: #222;
+}
+
+
 .alarm, .about {
-    border: 1px solid #eee;
     padding: 5px 25px;
     display: none;
     border-radius: 3px;
-    margin: 0 5%;
-    width:400px;
-    color: #555;
-    background-color:#f5f5f5;
+    margin: 0 0;
+    width:100%;
+    color: #eee;
+    background-color:#08a;
 }
 .alarm p, .about p {
     text-align:center;
 }
 
 .main {
-    padding: 30px 0;
+    padding: 30px  20%;
 }
 
 .footer-container footer {
@@ -193,18 +228,6 @@ nav a:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -214,7 +237,43 @@ nav a:hover {
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
+.arrow-up {
+    position: relative;
+    left:40%;
+    top:6px; 
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    
+    border-bottom: 10px solid #08a;
+}
+.about, .alarm {
+    height:auto;
+    opacity:1;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+}
+.clock {
+    padding-top: 12%;
+    padding-right: 10%;
+    font-size: 7em;
 
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+}
+.clock:hover {
+    color:#a5507E;
+    cursor: default;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+}
     nav a {
         
         float: left;
@@ -255,10 +314,21 @@ nav a:hover {
     WIDE: Menu
    ============ */
 
-    .title {
-        
+    .clock {
+        padding-top: 12%;
+        padding-right: 10%;
+        font-size: 9em;
     }
-
+    .settings {
+        padding-left:4%;
+        padding: 10px 10px;
+        margin: 0 auto;
+        width:18%;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+    }
     nav {
         width: 38%;
     }
@@ -278,6 +348,16 @@ nav a:hover {
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
+    }
+
+    .header-container {
+        width:1000px;
+    }
+    .clock {
+        text-align:center;
+        padding-top: 10%;
+        padding-right: 10%;
+        font-size: 13em;
     }
 }
 
